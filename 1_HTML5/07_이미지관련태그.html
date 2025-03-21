@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07_이미지관련태그</title>
+</head>
+<body>
+  
+  <h1>img 태그</h1>
+  <pre>
+- 웹 문서에 사진, 그림 같은 이미지를 삽입하는 용도의 태그
+
+[속성]
+1) src : 삽입할 이미지의 경로를 지정하는 속성(파일경로, 웹주소)
+2) width / height : 이미지의 크기를 지정하는 속성(inline이지만 크기 지정 가능)
+3) alt : 이미지를 설명하는 속성 -> 이미지가 화면에 출력되지 않는 경우에 화면에 설명을 직접 표시
+  </pre>
+
+  <hr>
+
+  <h3>src 속성 확인</h3>
+
+  <!-- 
+  상대 경로 : 현재 위치를 기준으로 경로를 지정하는 것
+  .. : 현재 위치에서의 상위 폴더
+  / : 아래, 하위, 안쪽
+  ./ : 동일 레벨(에 있는 폴더나 파일)
+
+  절대 경로 : 웹 사이트의 루트폴더(/)를 기준으로 경로를 지정
+  파일에서의 절대 경로 : C드라이브
+
+  http://192.168.50.246:5500/1_HTML5/06_영역관련태그.html
+  -> IP번호:포트번호192.168.50.246:5500 다음의 /루트폴더를 기준으로 ???
+  -->
+
+
+  <img src="../images/cats/cat1.jpg">
+
+  <hr>
+
+  <!-- 웹 이미지 경로(웹상 절대 경로)를 이용해서 이미지 출력해보기 -->
+<img src="https://images.unsplash.com/photo-1728044849325-47f4f5a21da3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+
+<hr><hr>
+
+<h2>width, height 속성을 이용한 크기 조절(고정/가변 크기)</h2>
+
+<h4>고정 크기 단위(px) : 화면의 크기와 상관없이 지정된 값의 
+  크기를 갖는 단위
+</h4>
+
+<!-- 디바이스에 관계없이 고정 크기 300px를 가짐 -->
+<img src="/images/dogs/dog1.jpg" width="300px" height="300px">
+<img src="/images/dogs/dog2.jpg" width="300px" height="300px">
+<img src="/images/dogs/dog3.jpg" width="300px" height="300px">
+<img src="/images/dogs/dog4.jpg" width="300px" height="300px">
+<img src="/images/dogs/dog5.jpg" width="300px" height="300px">
+
+
+<h4>가변 크기 단위(%) : 화면이나 영역 기준으로
+  사이트 크기에 따라 이미지의 크기가 변경되는 단위
+</h4>
+
+<!-- 화면 크기에 따라 크기도 변함.-->
+<img src="/images/cats/cat1.jpg" width="15%">
+<img src="/images/cats/cat2.jpg" width="15%">
+<img src="/images/cats/cat3.jpg" width="15%">
+<img src="/images/cats/cat4.jpg" width="15%">
+<img src="/images/cats/cat5.jpg" width="15%">
+
+
+<!-- 보통 이미지 크기를 지정할 때에는 너비나 높이 하나만 지정하는 게 좋음. 하나만 지정하면 나머지는 자동으로 찌그러지지 않게끔 지정됨. 둘 다 지정하면 이미지가 찌그러질 수 있음. -->
+
+<hr>
+
+<h2>alt 속성 확인</h2>
+
+
+<img src="/images/cats/cat6.jpg" alt="고양이1">
+
+
+
+
+
+</body>
+</html>
