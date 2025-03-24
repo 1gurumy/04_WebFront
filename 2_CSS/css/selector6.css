@@ -1,0 +1,26 @@
+
+
+/* 3순위 : 아이디 선택자 */
+#test1 {
+  height: 100px;
+  background-color: black;
+  color: white;
+}
+
+/* 4순위 : 클래스 선택자 */
+.cls1 { /*5순위에서 적용한 스타일 200px들은 그대로 유지된 상태에서 배경색 덮어쓰기됨.*/
+  background-color: green;
+}
+
+.cls1 { /* 위에서 작성한 클래스 선택자와 동일한 우선순위를 가지기 때문에 아래에 작성한 해당 작성자가 우선순위가 되어 노란색으로 덮어쓰기됨.*/
+  background-color: yellow;
+  /* 동일한 우선순위에선
+  아래쪽에 작성된 설정값이 우선 적용됨.*/
+}
+
+/* 5순위 : 태그 선택자 */
+div {
+  width: 200px;
+  height: 200px;
+  background-color: red !important; /* 1순위 : !importnat */
+}

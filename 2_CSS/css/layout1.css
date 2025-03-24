@@ -1,0 +1,101 @@
+.area1{background-color: red;}
+.area2{background-color: orange;}
+.area3{background-color: yellow;}
+.area4{background-color: green;}
+.area5{background-color: blue;}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+
+  width: 150px;
+  height: 150px;
+}
+.inline-block {
+  /* inline의 수평분할 특징 + block의 크기 조정 특징 */
+  display: none;  /* 화면에 표시되지는 않으나 존재는 함. 개발자 도구 열어서 확인 가능.*/
+}
+
+/* 감싸는 영역 요소 */
+#container-1 {
+  border: 3px solid black;
+  width: 323px;
+  height: 472px;
+}
+
+/* 내부에 영역을 분할할 요소 */
+.div-1 {
+  height: 50%;
+  width: 100%;
+
+  border: 1px dashed hotpink; /* dashed : 점선 */
+}
+
+#container-1 > .div-1:first-of-type {
+  height: 30%;
+  background-color: red;
+}
+
+#container-1 > .div-1:last-of-type {
+  height: 70%;
+  background-color: blue;
+}
+
+#container-2 {
+  border: 3px solid black;
+  width: 300px;
+  height: 440px;
+}
+
+/*
+block 형식의 요소는 별도의
+width가 지정되지 않으면 항상 부모 요소의 100%
+*/
+#container-2 > .div-2:nth-of-type(1) {
+  background-color: yellowgreen;
+  height: 20%;
+  /* width : 100%; 가 생략되어 있는 상태 */
+}
+#container-2 > .div-2:nth-of-type(2) {
+  background-color: orangered;
+  height: 30%;
+}
+#container-2 > .div-2:nth-of-type(3) {
+  background-color: skyblue;
+  height: 50%;
+}
+
+/* 좌우 분할 */
+#container-3 {
+  border: 5px solid red;
+  width: 400px;
+  height: 200px;
+}
+
+.div-3 {
+  width: 50%; /*  좌우 분할이므로 높이가 100%*/
+  height: 100%;
+  display: inline-block; /* 인라인 요소에 부모가 감싸져 있고 두 요소 사이에 */
+}
+
+#container-3 > .div-3:first-of-type {
+  background-color: pink;
+}
+#container-3 > .div-3:last-of-type {
+  background-color: green;
+}
+
+.div-4 {
+  border: 3px solid black;
+  height: 100px;
+}
+
+#test4 {
+  background-color: deeppink;
+
+  /* display: none; */  /* 처음부터 존재하지 않았던 것처럼 영역마저 사라짐. */
+  visibility: hidden; /* 보이지 않게 됬지만 영역은 남아있음.*/
+}

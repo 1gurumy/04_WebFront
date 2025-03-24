@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.poster-box {
+  position: relative;
+  margin: 0 50px;
+}
+
+/* p 태그는 기본 마진
+margin-top : 1em;
+margin-bottom : 1em;
+
+em 단위 ?
+상대적 크기 단위
+현재 요소의 font-size를 기준으로
+배율을 정함.
+*/
+.poster-box img {
+  width: 200px;
+
+  position: absolute;
+  left: ;
+}

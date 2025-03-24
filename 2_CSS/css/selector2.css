@@ -33,3 +33,80 @@ p[name="name-1"] {
 #test-div p {
   background-color: yellowgreen;
 }
+
+/* 반응 선택자 */
+.div-cls {
+  border: 1px solid black;
+  width: 200px;
+  height:200px;
+  background-color: gray;
+
+  /* 아래쪽 요소와의 간격 
+    ** 아래쪽 여백을 30px 지정하겠다
+  */
+  margin-bottom: 30px;
+
+  /* 해당 요소에 마우스 커서가 올라가면 
+    마우스 커서를 손가락 모양으로 변경하는 css속성
+  */
+  cursor: pointer;
+}
+
+#active-test:active { /* 요소를 계속 클릭하고 있다면*/
+  background-color: yellow;
+  /* 배경색을 노란색으로 하겠다. */
+}
+
+#hover-test:hover {
+  background-color: pink;
+  width: 230px;
+  height: 230px;
+}
+
+#hover-test {
+  /*
+    #hover-test 요소가 변화(바로 위에 작성한 반응 선택자)를 일으키면
+    바로 바뀌지 말고 0.5초에 걸쳐서 변하도록 작성해보기
+
+    트랜지션(transition) : HTML 요소가
+    한 상태에서 다른 상태로 변할 때의 
+    변화를 부드럽게 만들어준는 애니메이션 효과이다.
+    점진적으로 몇 초에 걸쳐 변화해라라
+  */
+  transition-duration: 0.5s;
+}
+
+/* 상태 선택자 */
+#focus-test:focus {
+  /*focus 되었을 때만 배경색이 빨간색으로 변함.*/
+  background-color: red;
+}
+
+input[name="fruits"]:checked {
+  /* input 속성중 fruits name을 가진 것 중 체크가 되어있다면 */
+  width: 30px;
+  height: 30px;
+  /*checkbox나 radio는 크기를 제외한 스타일 변경이 적용되지 않는다.*/
+  background-color: red;
+  /*따라서 배경 빨간색 속성 적용 안됨. 꼭 변경하고 싶다면
+     외부 CSS라이브러리를 가져와서 변경할 수 있음.*/
+}
+
+#test-div2 > input:enabled {  /* >(꺽쇠):자식 선택자 */
+  background-color: lightgreen;
+}
+
+#test-div2 > input:disabled {
+  background-color: lightpink;
+}
+
+/* 동위 선택자 */
+
+#div1 + div {  /* 아이디가 div1인 태그 바로 다음에 있는 동위관계의 태그를 선택해서 */
+  background-color: olive;
+    /* 배경색 올리브로 지정하겠다. */
+}
+
+#div3 ~ div {
+  background-color: blue;
+}
