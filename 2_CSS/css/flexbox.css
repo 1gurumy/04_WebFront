@@ -1,0 +1,403 @@
+div{
+  border : 1px solid black;
+  box-sizing: border-box;
+  /* content + padding + border 합으로 width/height 지정 */
+}
+
+
+.item{
+  width: 75px;
+  height: 75px;
+}
+
+
+.item1{background-color: red;}
+.item2{background-color: orangered;}
+.item3{background-color: orange;}
+.item4{background-color: yellow;}
+.item5{background-color: yellowgreen;}
+.item6{background-color: green;}
+.item7{background-color: lightblue;}
+.item8{background-color: blue;}
+.item9{background-color: violet;}
+
+.flex-container {
+  height: 800px;
+
+  display: flex;
+  /*
+  display: flex;
+  : item(자식태그)을 감싸는 요소(부모태그)의 형식을
+  flexbox로 변경하는 속성
+  -> item들이 자동으로 정렬되며, 레이아웃을 쉽게 조정할 수 있음.
+
+  내부 요소 자동 정렬 -> 가로/세로 정렬을 쉽게 조정 가능
+  공간 배분 -> 요소 간 간격을 자동으로 조정
+  반응형 레이아웃 -> 화면 크기에 따라 유연하게 조정
+  */
+
+  /* flex-direction (부모 전용 속성) 
+    메인축의 방향과 시작 위치를 지정하는 속성.
+  */
+  /* 메인 축의 행 방향 정렬 (가로, 기본값이다.) */
+   /* flex-direction: row; */
+
+  /* 메인 축 행 방향 정렬 + 순서 반대(뒤집어짐) */
+  /* flex-direction: row-reverse; */
+
+  /* 열 방향(세로) 정렬 */
+  /* flex-direction: column; */
+
+  /* 열 방향 정렬 + 순서 반대(뒤집어짐) */
+  /* flex-direction: column-reverse; */
+
+
+  /* flex-wrap (부모 전용 속성) 
+    내부 item들을 포장하는 속성
+    item들이 강제로 한 줄에 배치되게 할지,
+    한 줄을 벗어나 여러 줄로 배치할 것인지 지정
+
+  */
+
+  /* 브라우저 화면을 아무리 줄였다 키워도 item을 한줄로 배치 (기본값) */
+  /* flex-wrap: nowrap; */
+
+  /* item을 여러 줄로 배치(브라우저 화면을 줄이면 item이 아래줄에 배치됨) */
+  /* flex-wrap: wrap; */
+
+  /* item을 여러줄로 배치(뒤에서 배치, 반대로) */
+  /* flex-wrap: wrap-reverse; */
+
+  /* justify-content (부모 전용 속성)
+    !메인축 방향!으로 item의 정렬 방법을 조정함.*/
+  
+  /* 메인축 방향으로 앞에서부터 정렬 (기본값) */
+  /* justify-content: flex-start; */
+
+  /* 메인축 방향으로 뒤에 붙어서 정렬 */
+  /* justify-content: flex-end; */
+
+  /* 메인축 방향으로 가운데 정렬 */
+  /* justify-content: center; */
+
+  /* 양끝쪽을 붙인 상태에서 item들의 간격 일정하게 정렬. (브라우저 크기에 따라 유동적으로 간격이 늘었다 줄었다함.) */
+  /* justify-content: space-between; */
+  
+  /* 양끝은 간격 조금, item 중간은 일정 간격으로 정렬 */
+  /* justify-content: space-around; */
+
+  /* item이 메인축 내에서 동일한 간격을 가짐. */
+   /* justify-content: space-evenly; */
+
+  /* align-items (부모 전용 속성)
+    item들을 교차축 방향으로 정렬하는 방법을 지정하는 속성*/
+
+  /* 교차축 앞에서부터 정렬(기본값) */
+  /* align-items: flex-start; */
+
+  /* 교차축 가운데 정렬 */
+  /* align-items: center; */
+
+  /* 교차축 끝에 붙어서 정렬렬 */
+  /* align-items: flex-end; */
+
+}
+
+#con {
+  width: 450px;
+  height: 450px;
+
+  display: flex;
+
+  /* 메인축 가운데 정렬 */
+  justify-content: center;
+
+  /* 교차축 가운데 정렬 */
+  align-items: center;
+
+}
+
+#item-center {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+/* item(자식)에게 주는 flex 속성 */
+/* 
+flex-basis : item의 기본 크기(초기크기)를 결정하는 속성
+부모를 기준으로 자식이 부모박스의 얼마만큼을 점유하겠는가?
+
+flex-basis는 width와 비슷하지만, flex-grow, flex-shrink에 의해
+유동적으로 변경될 수있다.
+
+auto; (기본값) - 요소 본래의 크기만큼을 가짐(75 x 75)
+0 : 본래 요소의 크기 중 content만을 남겨두고 차지하는 영역 없음
+*/
+
+.basis-20 {
+  flex-basis: 20%; /* 부모 컨테이너의 20%만큼 차지하겠다. -> 브라우저 화면 크기에 맞춰 20% 차지. 브라우저 화면 크기 키우고 줄임에 따라 변화함.*/
+}
+
+.basis-30 {
+  flex-basis: 30%;
+}
+
+.basis-50 {
+  flex-basis: 50%;
+}
+
+/* flex-grow */
+.grow1 {
+  flex-grow: 0;
+  /* 0 (기본값)
+  : 요소가 추가적인 가용공간(남은공간)을 차지하지 않음
+  자신의 초기 크기만 유지
+
+  설정값은 여백의 비율로 작성하고 적용됨.
+  */
+}
+
+.grow2 {
+  flex-grow: 2;
+  /* 나머지 자식요소들이 0(기본값) 이기 때문에 item2가 남은 모든 가용공간을 차지한다. */
+}
+
+.grow3 {
+  flex-grow: 1;
+  /* item2에서 반의 크기만큼 부모의 가용공간을 차지함. */
+}
+
+/* flex-shrink
+  1(기본값)
+  : 컨테이너의 크기가 줄어들면
+  다른 요소들(자식요소)과 함께 비율적으로 축소될 수 있음을 의미
+  -> 브라우저 화면 줄이면 자식요소들이 찌그러짐.
+*/
+
+.shrink1 {
+  flex-shrink: 0;
+  /* flex-shrink: 0 -> 줄어들지 않음
+  (컨테이너의 공간이 부족해도 본인의 원래 크기를 유지)
+  -> item1을 제외하고 나머지 item들 찌그라듦. 자식요소 너무 많으면 컨테이너를 삐져나가기도 함.
+  */
+}
+
+.shrink2 {
+  flex-shrink: 2;
+  /* flex-shrink에 N -> N값 비율대로 줄어듦. ????*/
+}
+
+/* flex :
+Flexbox 컨테이너 내에서 (자식요소의)아이템의 크기와 배율을 설정하는 속성
+값 1~3 작성
+*/
+
+.flex-test1 {
+  flex: 1;
+  /* flex-grow : 1;  flex-shrink : 1;  flex-basis: 0; 
+  
+  flex-grow : 1;
+  남은 가용공간을 1 비율로 차지
+  
+  flex-shrink : 1;
+  컨테이너 크기가 부족할 때 줄어들면 1 비율로 축소
+
+  flex-basis: 0;
+  본래 요소의 content만 차지지  
+  */
+}
+
+.flex-test2 {
+  flex: 1 0 auto;
+  /* flex-grow : 1;   flex-shrink : 0;  flex-basis : auto; 
+  -> 가용공간 1비율로 차지, 축소되지 않음(본인 크기 유지),
+  기본 크기가 auto(본인 요소 원래 크기)
+  */
+}
+
+.flex-test3 {
+  flex: 1 50%;
+  /* 
+  flex-grow :1;   flex-shrink: 1;   flex-basic: 50%;
+  -> 남은 가용공간을 1 비율로 차지,
+  컨테이너 크기가 줄어들면 1비율로 축소,
+  기본 크기 50%
+  */
+}
+
+/* order
+기본값 0;
+양수 ~ 음수 설정 가능
+값이 작은 요소가 먼저 배치되고,
+큰 요소가 나중에 배치됨.
+*/
+.order:nth-child(1) {
+  order: 3;
+}
+
+.order:nth-child(2) {
+  order: -2;
+}
+
+.order:nth-child(3) {
+  order: 0;
+}
+
+/* flexbox 연습문제 */
+/* 1번 문제 */
+.container-1 {
+  width: 800px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-1, .footer-1 {
+  background-color: grey;
+  flex-basis: 20%;
+}
+
+.body-1 {
+  flex-basis: 60%; /* 자식 전용 속성 */
+  display: flex;  /* 부모 전용 속성 */
+  /* body-1 은 
+    container-1의 자식 요소이면서
+
+    body-item 요소들의 부모 요소이기도 하다.
+  */
+}
+
+.body-item:nth-child(1) {
+  flex-basis: 30%;
+  background-color: skyblue;
+}
+.body-item:nth-child(2) {
+  flex-basis: 50%;
+  background-color: tomato;
+}
+.body-item:nth-child(3) {
+  flex-basis: 20%;
+  background-color: antiquewhite;
+}
+/* ----------------------------------------------------- */
+.container-2 {
+  width: 800px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.body1 {
+  background-color: red;
+  flex-basis: 20%;
+}
+
+.body2 {
+  display: flex;
+  flex-basis: 80%;
+}
+
+.body2-item1 {
+  flex-basis: 33%;
+  background-color: yellow;
+}
+
+.body2-item2 {
+  flex-basis: 67%;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemm1 {
+  flex-basis: 80%;
+  background-color: greenyellow;
+}
+
+.itemm2 {
+  flex-basis: 20%;
+  background-color: blue;
+}
+
+.container-3 {
+  width: 800px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-3 {
+  flex-basis: 30%;
+  background-color: yellow;
+}
+
+.body-3 {
+  flex-basis: 70%;
+  display: flex;
+}
+
+.body-parts-1 {
+  flex-basis: 30%;
+  background-color:lightblue
+}
+
+.body-parts-2 {
+  display: flex;
+  flex-basis: 70%;
+  flex-direction: column;
+}
+
+.body3-item1 {
+  flex-basis: 50%;
+  display: flex;
+}
+
+.mint {
+  flex-basis: 70%;
+  background-color:aquamarine
+}
+
+.red {
+  flex-basis: 30%;
+  background-color: red;
+}
+
+.body3-item2 {
+  flex-basis: 50%;
+  background-color:deeppink;
+}
+/*----------------------------------------------------------*/
+
+.container-4 {
+  display: flex;
+  width: 800px;
+  height: 500px;
+
+  flex-direction: column;
+}
+
+.head-foot {
+  flex-basis: 20%;
+  background-color: green;
+}
+
+.body4 {
+  flex-basis: 60%;
+  display: flex;
+}
+
+.body4-left {
+  flex-grow: 0.8;
+  background-color: yellow;
+}
+
+.body4-right {
+  flex-grow: 2;
+  background-color: orange;
+}
+
+.body4-right > div {
+  background-color: red;
+}

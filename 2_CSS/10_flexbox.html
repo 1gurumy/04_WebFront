@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_flexbox</title>
+  <link href="css/flexbox.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Flexbox</h1>
+
+  <pre>
+        * Flexbox를 이용할 때 반드시 알아야 하는 것!
+
+
+        1. Flexbox의 구성
+        - flex-container : 정렬이 필요한 요소를 감싸는 요소 (부모)
+        - item: 정렬을 적용할 요소 (자식)
+        (flex-container와 item에 사용되는 flex 관련 css 속성이 나누어져 있음.)
+
+
+
+
+        2. Flexbox의 축
+        - 중심축(== 메인축)
+        - 교차축(== 반대축)
+       
+    </pre>
+
+
+  <hr>
+
+
+  <div class="flex-container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+    <div class="item item5">item5</div>
+    <div class="item item6">item6</div>
+    <div class="item item7">item7</div>
+    <div class="item item8">item8</div>
+    <div class="item item9">item9</div>
+  </div>
+
+  <hr>
+
+  <h1>Flexbox를 이용한 요소 정가운데 배치하기</h1>
+  <div id="con">
+    <div id="item-center"></div>
+  </div>
+
+  <hr>
+
+  <h3>flex-basis :
+    FlexBox 내의 item의 메인축 방향으로의
+    기본 점유율(크기 즉, 자식이 기본으로 가지고 있어야 할 크기)를 지정하는 속성이다.
+  </h3>
+
+  <div class="flex-container">
+    <div class="item item1 basis-20">item1</div>
+    <div class="item item2 basis-30">item2</div>
+    <div class="item item3 basis-50">item3</div>
+  </div>
+
+  <hr>
+
+  <h3>flex-grow :
+    FlexBox에 공간이 남을 경우
+    자식 요소인 item이 컨테이너에서 가용 공간을 얼마나 차지할지를
+    정의하는 속성이다.
+  </h3>
+
+  <div class="flex-container">
+    <div class="item item1 grow1">item1</div>
+    <div class="item item2 grow2">item2</div>
+    <div class="item item3 grow3">item3</div>
+  </div>
+
+  <h3>flex-shrink :
+    FlexBox에 공간이 부족할 때
+    item이 컨테이너보다 커질 경우 줄어들 수 있는
+    정도를 정의하는 속성
+  </h3>
+
+  <div class="flex-container">
+    <div class="item item1 shrink1">item1</div>
+    <div class="item item2 shrink2">item2</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+    <div class="item item3 shrink3">item3</div>
+  </div>
+
+  <hr>
+
+  <h3>flex :
+    flex-grow, flex-shrink, flex-basis를 한번에 쓸 수 있는
+    축약형 속성
+  </h3>
+
+  <div class="flex-container">
+    <div class="item item1 flex-test1">item1</div>
+    <div class="item item2 flex-test2">item2</div>
+    <div class="item item3 flex-test3">item3</div>
+  </div>
+
+  <hr>
+
+  <h3>order :
+    flexbox 컨테이너 내에서 각 아이템들의
+    나열순서(배치순서)를 결정하는 (자식전용)속성이다.
+  </h3>
+
+  <div class="flex-container">
+    <div class="item item1 order">item1</div>
+    <div class="item item2 order">item2</div>
+    <div class="item item3 order">item3</div>
+  </div>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <h1>문제1</h1>
+
+  <div class="container-1">
+    <div class="header-1"></div>
+    <div class="body-1">
+      <div class="body-item"></div>
+      <div class="body-item"></div>
+      <div class="body-item"></div>
+    </div>
+    <div class="footer-1"></div>
+  </div>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <h1>문제2</h1>
+
+  <div class="container-2">
+    <div class="body1"></div>
+    <div class="body2">
+      <div class="body2-item1"></div>
+      <div class="body2-item2">
+        <div class="itemm1"></div>
+        <div class="itemm2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------- -->
+
+  <hr>
+  <hr>
+  <hr>
+
+  <h1>문제3</h1>
+
+  <div class="container-3">
+    <div class="header-3"></div> <!-- 30% -->
+    <div class="body-3"> <!-- 70% -->
+      <div class="body-parts-1"></div> <!-- 30% -->
+      <div class="body-parts-2"> <!-- 70% -->
+        <div class="body3-item1"> <!-- 50% -->
+          <div class="mint"></div>
+          <div class="red"></div>
+        </div>
+        <div class="body3-item2"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <h1>문제4</h1>
+
+  <div class="container-4">
+    <div class="head-foot"></div>
+    <div class="body4">
+      <div class="body4-left"></div>
+      <div class="body4-right">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="head-foot"></div>
+  </div>
+
+
+</body>
+</html>
