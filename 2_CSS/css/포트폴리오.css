@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+
+  border: 1px solid black;  /* 영역 확인용 */
+}
+
+header img {
+  width: 50px;
+}
+
+header [class^="fa"] {
+  font-size: 50px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 1300px;
+  margin: auto; /* 가운데 정렬 */
+}
+
+header > section:nth-last-of-type(1),
+header > section:nth-last-of-type(3) {
+  flex-basis: 10%;
+}
+
+header > section:nth-last-of-type(2) {
+  flex-basis: 80%;
+}

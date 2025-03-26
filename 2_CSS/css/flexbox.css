@@ -394,10 +394,15 @@ Flexbox 컨테이너 내에서 (자식요소의)아이템의 크기와 배율을
 }
 
 .body4-right {
+  display: flex;
   flex-grow: 2;
   background-color: orange;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .body4-right > div {
+  width: 30%;
+  height: 50%;
   background-color: red;
 }

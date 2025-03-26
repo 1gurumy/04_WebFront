@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+
+  /* border: 1px solid black;  영역 확인용 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: 1140px;
+  margin: auto; /* 양쪽 가운데 정렬 */
+}
+
+header {
+  height: 200px;
+  display: flex;
+}
+
+header > section:nth-child(1),
+header > section:nth-child(3) {
+  flex-basis: 15%;
+}
+
+header > section:nth-child(2) {
+flex-basis: 70%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+header > section:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#home-logo {
+  width: 120px;
+}
+
+.search-area {
+  width: 500px;
+
+}
+
+.search-area fieldset {
+  border: 2px solid #455ba8;
+  border-radius: 5px; /* border-radius 모서리 곡률 */
+  padding: 2px;
+
+  display: flex;
+}
+
+#query {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none; /* 검색창이 가지고 있는 기본 테두리 제거. 0도 됨.*/
+  outline: none; 
+  /* outline = input 태그에 포커싱 되었을 때 이를 표현하기 위한 바같선.*
+  /* 없애고 싶다면  outline: none; */
+  flex-basis: 92%;
+}
+
+#search-btn {
+  flex-basis: 8%;
+  cursor: pointer;  /* 마우스 커서 가져다 대면 손가락 모양으로 바뀌도록 */
+  font-size: 20px;  /* 아이콘 크기 조정. 아이콘도 font로 인식됨. */
+  color: #455ba8;
+  border: 0;
+  background-color: transparent;  /* 배경색 투명*/
+}
+
+nav {
+  height: 50px;
+  border-bottom: 2px solid black; /* 아랫줄 */
+
+  position: sticky;
+  /* sticky : 특정 스크롤 위치에 도달했을 때
+  요소가 고정되는 효과를 주는데 사용함.
+  top, bottom, left, right 속성이 필수로
+  같이 작성되어야함.
+  -> 임계점 도달 시 어느 위치에 부착할지 
+  정해야 하기 때문
+   */
+   top : 0; /* 메뉴바를 화면 top에 부착 */
+   background-color: white;
+}
+
+nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none; /* 목록을 지정할 때 나타내는 동그란 기호 제거 */
+  height: 100%;
+}
+
+nav li {
+  flex-basis: 150px; /* %나 px 둘 다 가능*/
+}
+
+nav a {
+  text-decoration: none;  /* underline 제거 */
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  height: 100%;
+  display: block;
+  /* a태그가 인라인 형식이기 대문에 크기를 지정해주는 
+  height 적용 안됨. 따라서 block 형식으로 바꾼 것. */
+  text-align: center; /* 글씨 가운데 정렬 */
+  line-height: 50px;  /* 장평 50px 부여 */
+
+  transition-duration: 0.2s;
+  border-radius: 5px; /* 모서리 곡률 */
+}
+
+nav a:hover {
+  background-color: #455ba8;
+  color: white;
+}
+
+.content {
+  display: flex;
+}
+
+.content-1 {
+  flex-basis: 70%;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.content-item {
+  width: 90%;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.content-item > div {
+  width: 100%;
+  height: 200px;
+}
+
+.content-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 이미지가 부모태그(div)에 맞춰지면서
+  비율을 유지하고, 넘치는 부분은 잘림.
+  이미지가 자동으로 가운데 정렬됨. */
+}
+
+.content-2 {
+  flex-basis: 30%;  /* 이미지 크기 줄이면 반영됨. */
+}
+
+.content-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.content-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;  /* 최대 3줄까지만 표시 */
+  -webkit-box-orient: vertical; /* 텍스트 수직 방향 정렬 */
+  overflow: hidden; /* 넘치는 부분을 숨김 ==> 3줄 넘어가는 글자들은 모두 숨김 */
+}
+
+form[name="login-form"] {
+  height: 130px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#id-pw-area {
+  flex-basis: 70%;
+
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+}
+
+#id-pw-area > section:first-child {
+  flex-basis: 75%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#id-pw-area > section:last-child {
+  flex-basis: 25%;
+}
+
+#id-pw-area input {
+  padding: 5px;
+  flex-basis: 50%;
+  outline: none;
+  border: none;
+  border-right: 1px solid #ddd;
+}
+
+#id-pw-area input:first-child {
+  border-bottom: 1px solid #ddd;
+}
+
+#id-pw-area input:focus {
+  border: 2px solid #455ba8;
+}
+
+#id-pw-area button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#id-pw-area button:hover {
+  background-color: #455ba8;
+  color: white;
+}
+
+form[name="login-form"] > label {
+flex-basis: 30%;
+margin-top: 10px;
+font-size: 14px;
+}
+
+#signup-find-area {
+  margin-left: 10px;
+}
+
+#signup-find-area > a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#signup-find-area > span {
+  padding: 0 10px;    /* 상하0, 좌우10px 여백 */
+}
+
+footer {
+  height: 200px;
+  background-color: #a3add342;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > p {
+  font-weight: bold;
+}
+
+footer > section > * {
+  font-size: 14px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer span {
+  padding: 0 10px;
+}
+
+/*
+미디어 쿼리(Media Query)
+
+@media
+미디어 쿼리를 선언하는 키워드로,
+특정 조건(화면 크기)에 따라 CSS 스타일을 적용할 때 사용
+
+all
+모든 미디어 유형에 적용됨.
+생략 가능함. 보통 screen을 많이 사용함.
+
+(max-width: 767px) : 반응형 모바일 기준
+화면 너비가 767px 이하일 때 스타일을 적용함.
+스마트폰, 작은 태블릿 등 작은 화면에서 적용하는 크기.
+*/
+
+/* 모바일 기준 : 화면 너비가 767px 이하일 때 */
+@media all and (max-width: 767px) {
+  main {
+    width: 100vw;
+    /* vw : viewport width의 약자
+      현재 뷰포트의 100%만큼 너비 차지
+    */
+  }
+
+  header {
+    display: none;
+  }
+  
+  nav {
+    width: 100%;
+    border-bottom: none;
+    height: auto;
+  }
+  
+  nav > ul {
+   flex-direction: column; 
+  }
+
+  nav li {
+    flex-basis: auto; /* 요소의 본래 크기 만큼만 영역 차지 */
+    border-bottom: 1px solid #ddd;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .content-2 {
+    padding: 20px;
+  }
+
+  footer {
+    width: 100vw;
+  }
+
+  footer p,
+  footer > section > * {
+    font-size: 12px;
+  }
+
+}
+
+
+
+/* 태블릿 기준 : 화면 너비가 768px ~ 1023px 범위 */
+@media screen and (min-width: 768px) and (max-width:1023px) {
+
+}
+
+/* PC 기준 : 화면 너비가 1024px 이상일 때 */
+@media (min-width: 1024px) {
+
+}
