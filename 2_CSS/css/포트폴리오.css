@@ -1,20 +1,7 @@
 * {
   box-sizing: border-box;
 
-  border: 1px solid black;  /* 영역 확인용 */
-}
-
-header img {
-  width: 50px;
-}
-
-header [class^="fa"] {
-  font-size: 50px;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
+  /* border: 1px solid black; /* 영역 확인용 */
 }
 
 main {
@@ -22,11 +9,252 @@ main {
   margin: auto; /* 가운데 정렬 */
 }
 
-header > section:nth-last-of-type(1),
-header > section:nth-last-of-type(3) {
-  flex-basis: 10%;
+header {
+  display: flex;
+  flex-direction: column;
 }
 
-header > section:nth-last-of-type(2) {
+.section-1 {
+  display: flex;
+  flex-basis: 20%;
+}
+
+.section-2 {
+  display: flex;
+  flex-basis: 30%;
+  margin: auto;
+}
+
+.section-3 {
+  display: flex;
+  margin:auto;
+}
+
+.section-3 > div > div {
+  display: flex;
+  flex-direction: column; /* 아이콘과 텍스트가 세로로 정렬되도록 */
+  align-items: center; /* 텍스트와 아이콘이 가운데 정렬되도록 */
+}
+
+.section-3 > div img {
+  margin-top: 10px;
+  padding: 3px;
+  border: 1.5px solid rgb(229, 229, 229);
+  border-radius: 15px;
+}
+
+.section-3 > div img:hover {
+  box-shadow: -1px 3px 5px #dbdbdb;
+}
+
+.section-1 [id*="btn"] {
+  font-size: 45px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.section-1 div {
+  flex-basis: 85%;
+}
+
+
+.section-1 a:visited {
+  color: inherit;  /* 색상 변화 방지 */
+  text-decoration: none;  /* 밑줄 없애기 */
+}
+
+section img {
+  width: 45px;
+}
+
+.section-2 fieldset {
+  width: 700px;
+  border: 1px solid rgb(73, 239, 32);
+  border-radius: 15px;
+  padding: 5px;
+
+}
+
+.section-2 i {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.section-2 i:nth-of-type(1) {
+  background-color: rgb(225, 225, 225);
+  color: white;
+}
+
+.section-2 i:nth-of-type(2) {
+  color: rgb(70, 70, 70);
+}
+
+.section-2 i:nth-of-type(3) {
+  color: rgb(58, 184, 26);
+}
+
+.section-2 img {
+  margin-bottom: -10px;
+}
+
+.section-2 input {
+  width: 70%;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+}
+
+.section-2 input:placeholder-shown {
+  color: transparent;
+}
+
+.section-2 input:focus:placeholder-shown {
+  color: grey;
+}
+
+.body-left-ad img:nth-child(1) {
+  margin-top: 20px;
+ width:62%;
+}
+
+.body-left-top li {
+  list-style: none;
+}
+
+
+.body-left-top ul {
+  margin-top: 15px;
+  display: flex;
+  justify-content: start;
+  margin-left: -23px;
+}
+
+
+.body-left-top ul > li, span {
+  margin-right: 10px;
+  display: inline-block;
+  height: 25px;
+}
+
+
+.click:hover {
+  cursor: pointer;
+  transition: opacity 0s;
+  text-decoration: underline;
+}
+
+.click {
+  color: grey;
+  text-decoration: none;
+}
+
+.live {
+  border: 0;
+  background-color: red;
+  border-radius: 10px;
+  padding: 0;
+  width: 40px;
+  color: white;
+  font-size: smaller;
+  margin-top: 5px;
+  margin-left: -10px;
+}
+
+
+.news-header {
+  width: 95%;
+  height: 50px;
+  background-color: rgb(239, 239, 239);
+  padding: 0;
+  align-items: center;
+  font-size: 13px;
+  display: flex;
+  margin-left: 16px;
+  border-radius: 5px;
+}
+
+.news-header span {
+  flex-basis: 23%;
+}
+
+.news-header fieldset {
+  border: 1px solid red;
+  background-color: white;
+  border-radius: 17px;
+  padding: 5px;
+  height: 25px;
+  color: red;
+  
+}
+
+.body-left-top {
+  display: flex;
+  border: 1px solid rgb(199, 199, 199);
+  width: 62%;
+  border-radius: 7px;
+  flex-direction: column;
+}
+
+.pic1-left,
+.pic2-left,
+.pic3-left,
+.pic4-left
+{
+  width: 270px;
+  height: 140px;
+  overflow: hidden;
+}
+
+.pic1-left > img,
+.pic2-left > img,
+.pic3-left > img,
+.pic4-left > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+
+.pic1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pic1-right-top {
+  display: flex;
+}
+
+.pic1-right-top > fieldset:nth-child(1) {
+  width: 47px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 50px;
+}
+
+[name="subscribe"] {
+  width: 54px;
+  height: 30px;
+  font-size: 12px;
+  border: 1px solid rgb(96, 96, 238);
+  color:rgb(96, 96, 238);
+  border-radius: 17px;
+}
+
+.pic1-right-top,
+.pic1-right-center
+ {
+  justify-content: flex-start;
+  margin-left: -90px;
+  font-size: 15px;
+}
+
+.pic1-right-top > div {
   flex-basis: 80%;
+  flex-wrap: wrap;
+}
+
+.pic1-right-top > fieldset {
+  flex-basis: 20%;
+
 }
