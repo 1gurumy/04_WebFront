@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_반복문,분기문</title>
+</head>
+<body>
+  
+  
+  <h1>반복문 예제</h1>
+  <pre>
+    반복문 종류 : for, while, for..of(배열을 향상된 for문으로 순회), for..in(자바스크립트 객체를 향상된 for문으로 순회), forEach(향상된 for문 처럼 이용)..
+  </pre>
+
+  <hr>
+
+  <h3>메뉴 주문하기</h3>
+  <ol>
+    <li>감법 : 3000</li>
+    <li>라면 : 3500</li>
+    <li>돈까스 : 5000</li>
+  </ol>
+  <button onclick="check1()">주문하기</button>
+  <!-- 버튼 type을 지정하지 않으면 기본값 submit임.  -->
+  <!-- form 태그 안에 있는 버튼 type이 submit 일 때만 서버에 제출됨.  -->
+  <!-- form 태그 안에 있지 않으면 기본값이더라도 그냥 버튼일 뿐임. 서버 제출 안됨. -->
+
+  <hr>
+
+  <h1>Up & Down Game</h1>
+
+  <pre>
+    1 부터 200 사이 난수를 몇 회만에 맞추는지 카운트하는 게임
+
+    - Math.randon() : 난수 발생(p 이상 1 미만의 난수를 생성)
+    - Math.floor() : 내림 처리해서 정수로 변환
+    - while()
+    - break;
+    - continue;
+    - if()
+  </pre>
+
+
+  <button onclick="startGame()">게임 시작</button>
+
+
+  <script src="../js/05_반복문,분기문.js"></script>
+</body>
+</html>
