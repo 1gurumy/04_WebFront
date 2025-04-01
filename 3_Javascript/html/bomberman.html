@@ -1,0 +1,86 @@
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>봄버맨</title>
+
+  <style>
+    #box {
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      overflow: hidden;
+    }
+
+    img {
+      width: 50px;  
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>봄버맨!</h1>
+  <ul>
+    <li>방향키로 이동 : 누르고 있으면 키 방향으로 계속 이동</li>
+    <li>x 키 누를 때마다 봄버맨 캐릭터 오른쪽에 폭탄 이미지 생성됨, 생성 후 6초가 지나면 자동으로 터지는 이미지로 바뀜.</li> 
+    <li>z 키 누르면 생성되었던 모든 폭탄 이미지가 터지는 이미지로 바뀌고, 1초 후 화면에서 사라짐.</li>
+  </ul>
+
+  <div id="box">
+    <img src="../../images/bomberman.png">
+
+  </div>
+
+  <script src="../js/bomberman.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>봄버맨</title>
+
+  <style>
+    #box {
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      overflow: hidden;
+      position: relative; /* 부모 요소가 상대적인 위치 기준이 되어야 자식 요소가 그 안에서 이동 가능 */
+    }
+
+    img {
+      width: 50px;
+      position: absolute; /* 봄버맨 위치가 절대적으로 설정되어야 함 */
+    }
+
+    .bomb {
+      width: 50px;
+    }
+
+    .explosion {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>봄버맨!</h1>
+  <ul>
+    <li>방향키로 이동 : 누르고 있으면 키 방향으로 계속 이동</li>
+    <li>x 키 누를 때마다 봄버맨 캐릭터 오른쪽에 폭탄 이미지 생성됨, 생성 후 6초가 지나면 자동으로 터지는 이미지로 바뀌며 사라짐.</li> 
+    <li>z 키 누르면 생성되었던 모든 폭탄 이미지가 터지는 이미지로 바뀌고, 1초 후 화면에서 사라짐.</li>
+  </ul>
+
+  <div id="box">
+    <img id="bomberman" src="../../images/bomberman.png" style="top: 0px; left: 0px;">
+  </div>
+
+  <script src="../js/bomberman.js"></script>
+</body>
+</html>
